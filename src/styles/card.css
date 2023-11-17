@@ -1,0 +1,32 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid #ffe419;
+  border-radius: 10px;
+  min-width: 150px;
+  min-height: 250px;
+}
+
+.img-container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding: 10px;
+  width: 150px;
+  height: 150px;
+}
+
+.card-img {
+  flex: 1;
+}
+
+.card-name {
+  display: flex;
+  justify-content: center;
+  align-self: bottom;
+  width: 100%;
+  background-color: #ffe419;
+  padding: 10px 0px;
+}
