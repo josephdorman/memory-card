@@ -16,22 +16,6 @@
   background-size: contain;
 }
 
-/*
-
-body {
-  display: flex;
-  background-image: url('../../public/background.jpg');
-  background-position: top 90px left 200px;
-  background-size: contain;
-  height: 100vh;
- }
-
- */
- 
- @media (max-height: 900px) {
-
- }
-
 .card-container {
   display: flex;
   align-items: center;
