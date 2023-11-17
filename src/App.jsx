@@ -3,6 +3,7 @@ import './styles/App.css'
 import Api from './components/api'
 import Card from './components/card'
 import Header from './components/header'
+import Footer from './components/footer'
 
 function App() {
   const [pokemon, setPokemon] = useState([])
@@ -19,6 +20,7 @@ function App() {
           <Card pokemon={pokemon}></Card>
         </div>
       </div>
+      <Footer></Footer>
     </>
   )
 }
