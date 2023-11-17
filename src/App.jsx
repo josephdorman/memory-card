@@ -14,8 +14,10 @@ function App() {
   return (
     <>
       <Header></Header>
-      <div className="card-container">
-        <Card pokemon={pokemon}></Card>
+      <div className="body">
+        <div className="card-container">
+          <Card pokemon={pokemon}></Card>
+        </div>
       </div>
     </>
   )
