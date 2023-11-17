@@ -1,7 +1,9 @@
 .header {
   display: flex;
+  flex-direction: column;
   width: calc(100% - 20px);
-  justify-content: space-between;
-  height: 90px;
+  align-items: center;
+  height: 50px;
   padding: 10px;
+  background-color: aquamarine;
 }
