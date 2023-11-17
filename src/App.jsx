@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './styles/App.css'
 import Api from './components/api'
 import Card from './components/card'
+import Header from './components/header'
 
 function App() {
   const [pokemon, setPokemon] = useState([])
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <>
+      <Header></Header>
       <div className="card-container">
         <Card pokemon={pokemon}></Card>
       </div>
