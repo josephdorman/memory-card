@@ -5,6 +5,7 @@ import Card from './components/card'
 import Header from './components/header'
 import Footer from './components/footer'
 import getRandomNum from './components/hooks'
+import Gameover from './components/gameover'
 
 function App() {
   const [score, setScore] = useState(0)
@@ -92,6 +93,9 @@ function App() {
 
   return (
     <>
+      {
+        Gameover()
+      }
       <Header score={score}></Header>
       <div className="body">
         <div className="card-container">
