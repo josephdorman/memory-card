@@ -1,13 +1,11 @@
+import getRandomNum from "./hooks";
+
 async function Api () {
   const promises = [];
   const pokemonData = [];
 
-  const randomNum = () => {
-    return Math.floor(Math.random() * 1000)
-  }
-
   for (let i = 0; i < 3; i++) {
-      promises.push(fetch(`https://pokeapi.co/api/v2/pokemon/${randomNum()}`).then(response => response.json()));
+      promises.push(fetch(`https://pokeapi.co/api/v2/pokemon/${getRandomNum(1000)}`).then(response => response.json()));
   }
 
   await Promise.all(promises)

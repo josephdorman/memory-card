@@ -20,6 +20,10 @@ function App() {
     console.log(e.target, id);
   }
 
+  const shuffle = () => {
+    
+  }
+
   return (
     <>
       <Header></Header>
