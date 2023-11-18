@@ -1,6 +1,6 @@
 import '../styles/card.css'
 
-function Card ({pokemon}) {
+function Card ({pokemon, clickHandler}) {
   return (
     <>
       { 
@@ -9,7 +9,7 @@ function Card ({pokemon}) {
             return false;
           }
           return (
-            <div key={element.id} className='card'>
+            <div key={element.id} onClick={(e) => clickHandler(e, element.id)} className='card'>
               <div className="img-container">
                 <img src={element.sprite} className='card-img'></img>
               </div>

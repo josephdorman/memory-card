@@ -15,12 +15,17 @@ function App() {
     Api().then((res) => setPokemon({...pokemon, allPokemon: res}))
   }, [])
 
+  // return future "seen" var/this func will prob handle checking if card had been seen, once clicked and checked, shuffle/add score etc
+  const clickHandler = (e, id) => {
+    console.log(e.target, id);
+  }
+
   return (
     <>
       <Header></Header>
       <div className="body">
         <div className="card-container">
-          <Card pokemon={pokemon}></Card>
+          <Card pokemon={pokemon} clickHandler={clickHandler}></Card>
         </div>
       </div>
       <Footer></Footer>
