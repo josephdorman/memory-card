@@ -3,7 +3,25 @@
   flex-direction: column;
   width: calc(100% - 20px);
   align-items: center;
-  height: 50px;
+  height: 80px;
   padding: 10px;
   background-color: rgb(206,231,249);
+}
+
+.header-title {
+  display: flex;
+  gap: 10px;
+}
+
+.header-title span:nth-child(1) {
+  color: rgb(232,62,52);
+}
+
+.header-title span:nth-child(2) {
+  color: rgb(255, 255, 255);
+}
+
+.score-banner {
+  font-size: 18px;
+  font-weight: bold;
 }
