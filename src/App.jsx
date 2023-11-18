@@ -20,6 +20,12 @@ function App() {
     return pokemon.allPokemon[getRandomNum(6)]
   }
 
+  const setSeen = (id) => {
+    const poke = pokemon.shuffledPokemon.find(obj => obj.id === id)
+
+    poke.seen = true;
+  }
+
   // todo: make sure thats theres always 2 unseen pokemon
   const shuffle = () => {
     const shuffled = [];
@@ -38,6 +44,7 @@ function App() {
 
   // return future "seen" var/this func will prob handle checking if card had been seen, once clicked and checked, shuffle/add score etc
   const clickHandler = (e, id) => {
+    setSeen(id);
     shuffle()
   }
 
