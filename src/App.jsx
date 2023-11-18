@@ -7,6 +7,7 @@ import Footer from './components/footer'
 import getRandomNum from './components/hooks'
 
 function App() {
+  const [score, setScore] = useState(0)
   const [pokemon, setPokemon] = useState({
     allPokemon : [],
     shuffledPokemon: []
@@ -17,13 +18,11 @@ function App() {
   }, [])
 
   const getRandomPokemon = () => {
-    return pokemon.allPokemon[getRandomNum(6)]
+    return pokemon.allPokemon[getRandomNum(pokemon.allPokemon.length - 1)]
   }
 
   const setSeen = (id) => {
     const poke = pokemon.shuffledPokemon.find(obj => obj.id === id)
-
-    console.log(poke);
 
     poke.seen = true;
   }
@@ -41,11 +40,16 @@ function App() {
   const checkGameover = (id) => {
     const poke = pokemon.shuffledPokemon.find(obj => obj.id === id)
 
+    // lose condition
     if (checkSeen(poke) === true) {
-      console.log('seen')
-    }
+      console.log('lose')
+    } // win condition
+    else if (score === 5) {
+      console.log('win')
+    } // add score
     else if (checkSeen(poke) === false) {
-      console.log('not seen')
+      setScore(score + 1);
+      console.log(score)
     }
 
   }
@@ -61,7 +65,7 @@ function App() {
       // if not in list continue
       if (shuffled.find(obj => obj.id === newPoke.id) === undefined) {
         // if not seen, push
-        if (!checkSeen(newPoke) && unseen !== 0) {
+        if (checkSeen(newPoke) === false && unseen !== 0) {
           shuffled.push(newPoke)
           unseen--;
         } // if unseen = 0 then array already has 2 unseen cards, fill in the rest of the array w whatever
@@ -73,8 +77,6 @@ function App() {
 
     }
 
-    console.log(shuffled)
-
     setPokemon({...pokemon, shuffledPokemon: shuffled})
   }
 
@@ -82,12 +84,12 @@ function App() {
   const clickHandler = (e, id) => {
     checkGameover(id);
     setSeen(id);
-    shuffle()
+    shuffle();
   }
 
   return (
     <>
-      <Header></Header>
+      <Header score={score}></Header>
       <div className="body">
         <div className="card-container">
           <Card pokemon={pokemon} clickHandler={clickHandler}></Card>
