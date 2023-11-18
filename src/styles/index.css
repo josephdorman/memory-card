@@ -1,4 +1,10 @@
+@font-face {
+  font-family: pokemon;
+  src: url('../assets/pokemon-classic.ttf');
+}
+
 * {
+  font-family: pokemon, sans-serif;
   margin: 0px;
   padding: 0px;
 }
