@@ -17,6 +17,12 @@ function App() {
     Api().then((res) => setPokemon({allPokemon: res, shuffledPokemon: [res[0], res[1], res[2], res[3], res[4]]}))
   }, [])
 
+  useEffect(() => {
+    if (score === 5) {
+      console.log('win from use effect');
+    }
+  }, [score])
+
   const getRandomPokemon = () => {
     return pokemon.allPokemon[getRandomNum(pokemon.allPokemon.length - 1)]
   }
@@ -43,9 +49,6 @@ function App() {
     // lose condition
     if (checkSeen(poke) === true) {
       console.log('lose')
-    } // win condition
-    else if (score === 5) {
-      console.log('win')
     } // add score
     else if (checkSeen(poke) === false) {
       setScore(score + 1);
