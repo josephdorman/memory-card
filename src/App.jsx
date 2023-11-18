@@ -6,10 +6,13 @@ import Header from './components/header'
 import Footer from './components/footer'
 
 function App() {
-  const [pokemon, setPokemon] = useState([])
+  const [pokemon, setPokemon] = useState({
+    allPokemon : [],
+    shuffledPokemon: []
+  })
 
   useEffect(() => {
-    Api().then((res) => setPokemon(res))
+    Api().then((res) => setPokemon({...pokemon, allPokemon: res}))
   }, [])
 
   return (

@@ -3,8 +3,8 @@ import '../styles/card.css'
 function Card ({pokemon}) {
   return (
     <>
-      {
-        pokemon.map(element => {
+      { 
+        pokemon.allPokemon.map(element => {
           if (pokemon.length === 0) {
             return false;
           }
