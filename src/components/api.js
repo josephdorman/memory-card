@@ -11,7 +11,7 @@ async function Api () {
   await Promise.all(promises)
     .then((result) => {
       for (let i = 0; i < result.length; i++) {
-        pokemonData.push({id: result[i].id, name: result[i].name, sprite: result[i].sprites.front_default})
+        pokemonData.push({id: result[i].id, name: result[i].name, sprite: result[i].sprites.front_default, seen: false})
       }
 
     })
