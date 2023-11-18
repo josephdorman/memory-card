@@ -13,7 +13,7 @@ function App() {
   })
 
   useEffect(() => {
-    Api().then((res) => setPokemon({allPokemon: res, shuffledPokemon: [res[0], res[1], res[2]]}))
+    Api().then((res) => setPokemon({allPokemon: res, shuffledPokemon: [res[0], res[1], res[2], res[3], res[4]]}))
   }, [])
 
   const getRandomPokemon = () => {
@@ -55,7 +55,7 @@ function App() {
     const shuffled = [];
     let unseen = 2;
 
-    while (shuffled.length < 3) {
+    while (shuffled.length < 5) {
       const newPoke = getRandomPokemon();
 
       // if not in list continue

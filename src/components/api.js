@@ -4,7 +4,7 @@ async function Api () {
   const promises = [];
   const pokemonData = [];
 
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 15; i++) {
       promises.push(fetch(`https://pokeapi.co/api/v2/pokemon/${getRandomNum(1000)}`).then(response => response.json()));
   }
 
