@@ -4,6 +4,7 @@ import Api from './components/api'
 import Card from './components/card'
 import Header from './components/header'
 import Footer from './components/footer'
+import getRandomNum from './components/hooks'
 
 function App() {
   const [pokemon, setPokemon] = useState({
@@ -12,16 +13,32 @@ function App() {
   })
 
   useEffect(() => {
-    Api().then((res) => setPokemon({...pokemon, allPokemon: res}))
+    Api().then((res) => setPokemon({allPokemon: res, shuffledPokemon: [res[0], res[1], res[2]]}))
   }, [])
+
+  const getRandomPokemon = () => {
+    return pokemon.allPokemon[getRandomNum(6)]
+  }
+
+  // todo: make sure thats theres always 2 unseen pokemon
+  const shuffle = () => {
+    const shuffled = [];
+
+    while (shuffled.length < 3) {
+      const newPoke = getRandomPokemon();
+
+      if (shuffled.find(obj => obj.id === newPoke.id) === undefined) {
+        shuffled.push(newPoke)
+      }
+
+    }
+
+    setPokemon({...pokemon, shuffledPokemon: shuffled})
+  }
 
   // return future "seen" var/this func will prob handle checking if card had been seen, once clicked and checked, shuffle/add score etc
   const clickHandler = (e, id) => {
-    console.log(e.target, id);
-  }
-
-  const shuffle = () => {
-    
+    shuffle()
   }
 
   return (
