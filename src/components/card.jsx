@@ -4,8 +4,8 @@ function Card ({pokemon, clickHandler}) {
   return (
     <>
       { 
-        pokemon.allPokemon.map(element => {
-          if (pokemon.length === 0) {
+        pokemon.shuffledPokemon.map(element => {
+          if (pokemon.shuffledPokemon.length === 0) {
             return false;
           }
           return (
