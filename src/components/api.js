@@ -3,9 +3,18 @@ import getRandomNum from "./hooks";
 async function Api () {
   const promises = [];
   const pokemonData = [];
+  const index = [];
+
+  while (index.length < 15) {
+    const num = getRandomNum(1000);
+
+    if (index.find((element) => element === num) === undefined) {
+      index.push(num)
+    }
+  }
 
   for (let i = 0; i < 15; i++) {
-      promises.push(fetch(`https://pokeapi.co/api/v2/pokemon/${getRandomNum(1000)}`).then(response => response.json()));
+      promises.push(fetch(`https://pokeapi.co/api/v2/pokemon/${index[i]}`).then(response => response.json()));
   }
 
   await Promise.all(promises)
