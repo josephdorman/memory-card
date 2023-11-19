@@ -8,6 +8,7 @@ import getRandomNum from './components/hooks'
 import Gameover from './components/gameover'
 
 function App() {
+  const [gameStatus, setGameStatus] = useState(null)
   const [score, setScore] = useState(0)
   const [pokemon, setPokemon] = useState({
     allPokemon : [],
@@ -20,7 +21,7 @@ function App() {
 
   useEffect(() => {
     if (score === 5) {
-      console.log('win from use effect');
+      setGameStatus('win')
     }
   }, [score])
 
@@ -49,11 +50,10 @@ function App() {
 
     // lose condition
     if (checkSeen(poke) === true) {
-      console.log('lose')
+      setGameStatus('lost');
     } // add score
     else if (checkSeen(poke) === false) {
       setScore(score + 1);
-      console.log(score)
     }
 
   }
@@ -91,11 +91,15 @@ function App() {
     shuffle();
   }
 
+  const retryHandler = () => {
+    setGameStatus(null)
+    setScore(0)
+    Api().then((res) => setPokemon({allPokemon: res, shuffledPokemon: [res[0], res[1], res[2], res[3], res[4]]}))
+  }
+
   return (
     <>
-      {
-        Gameover()
-      }
+      <Gameover gameStatus={gameStatus} retryHandler={retryHandler}></Gameover>
       <Header score={score}></Header>
       <div className="body">
         <div className="card-container">
