@@ -8,10 +8,22 @@ footer {
 }
 
 .credit {
+  padding: 5px;
+  height: 30px;
+  width: 380px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.github {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3px;
+  border: none;
+  background-color: rgb(127,180,113);
+  height: 30px;
+  width: 30px;
 }
 
 .bold {
@@ -22,3 +34,9 @@ footer {
   height: 28px;
   width: 28px;
 }
+
+.s-logo:hover {
+  height: 30px;
+  width: 30px;
+}
+
