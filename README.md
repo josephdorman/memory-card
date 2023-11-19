@@ -10,12 +10,12 @@ This project was part of The Odin Project's JavaScript curriculum. The goal of t
 
 ## Demo
 
-https://github.com/josephdorman/memory-card/blob/main/public/pokemon-memory-game.png
+Insert gif or link to demo
 
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/josephdorman/memory-card/blob/main/public/pokemon-memory-game.png)
 
 
 ## Features
